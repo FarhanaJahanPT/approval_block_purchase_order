@@ -1,0 +1,36 @@
+<odoo>
+    <data>
+        <record id="approval_block_action" model="ir.actions.act_window">
+            <field name="name">Approval Block</field>
+            <field name="res_model">approval.block</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <record id="approval_block_tree" model="ir.ui.view">
+            <field name="name">approval.block.tree</field>
+            <field name="model">approval.block</field>
+            <field name="arch" type="xml">
+                <tree string="Approval" editable="top">
+                    <field name="name"/>
+                    <field name="amount_limit"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="purchase_order_form_inherit_approval_block" model="ir.ui.view">
+            <field name="name">purchase.order.form.inherit</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                    <field name="date_order" position="after">
+                    <field name="approval_block_id"/>
+                    </field>
+
+            </field>
+        </record>
+
+
+
+    </data>
+</odoo>

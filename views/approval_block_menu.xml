@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <menuitem id="approval_block" name="Approval Block"/>
+        <menuitem id="approval_block_menu" name="Approval Block" action="approval_block_action" parent="approval_block"/>
+    </data>
+</odoo>
